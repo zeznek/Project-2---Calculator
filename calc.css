@@ -1,0 +1,151 @@
+/*******************************
+CSS main
+********************************/
+
+/* global styling */
+
+/*
+    Choose the colours you want for the calculator here.
+
+    Usage examples:
+
+    color: var(--fg-clr-normal); 
+    background: var(--bg-clr-light);
+
+    fg: foreground
+    bg: background
+    line: line color
+*/
+
+:root {
+    --fg-clr-normal: #fff;                                      /* standard for text */    
+   
+    --bg-clr-light: rgb(70,70,70);   /* skärmen */                               
+    --bg-clr-gray: rgb(48, 48, 49); /* Kantskugga */
+    --bg-clr-iceblue: rgb(49, 48, 48);
+    --line-clr-blue: rgb(43, 43, 43);
+    --line-clr-darkgray: rgb(43, 43, 43);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    z-index: 100;
+    color:white;
+
+}
+
+.container {                                                    /*main container for the whole page*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    z-index: 100;
+}
+
+.img {
+    z-index: 1;
+    position:fixed;
+}
+
+.main {                                                         /*calc body*/
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    gap: .5rem;
+    background-color: var(--bg-clr-iceblue);
+    border: 2px solid var(--line-clr-blue);
+    box-shadow: .125rem .125rem .125rem var(--bg-clr-gray);
+    min-height: 35%;
+    padding: 1rem;
+    border-radius: 20px;
+    width: 265px;
+}
+
+.wrango { /* css till bild på dig lol, kunde inte hitta något som jag kunde förstå för att fixa ( & ), 
+    så det fick bli en bild på dig istället :D */
+    height:  50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+.calc-btn {                                                    /*calc buttons*/
+    height:  50px;
+    width: 50px;
+    font-size: clamp(1rem, 1vw, 2rem);
+    border-radius: 25px;
+    border: none;
+    background-color:rgb(69, 68, 68);
+    font-weight: 650;
+}   
+
+.calc-btn-xtra {
+    background: rgb(11, 93, 30);
+}
+
+.calc-btn-ultra {
+    background: rgb(112, 109, 109);
+}
+
+.calc-screen {  
+    display: flex;                                              /*Make sure the digits are centered in the middle*/
+    flex: 1;
+    align-items: center;                                        /*calculator screen*/
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: clamp(.55rem, 2vw, 3.5rem);                     /*clamp is useful if you want the page to be responsive. (minimum size, preferred size, max size) */
+    box-shadow: inset 1px 1px 0px var(--bg-clr-gray);           /*inset means that the shadow is inside the element - not outside - used here to create the illusion of a real screen - feel free to remove and see what you like best */
+    width: 230px;
+    height: clamp(3rem, 3vw, 3rem);
+    border: 1px solid var(--line-clr-darkgray);
+    background: var(--bg-clr-light);
+    color: var(--fg-clr-normal);
+    padding: .125rem;
+    overflow-y: hidden;
+    overflow-x: scroll;
+}
+
+
+/* specifically for grid */
+
+.grid-col-span-2 {
+    grid-column: span 2;
+    width: 110px;
+}
+
+.grid-col-span-4 {
+    grid-column: span 4;
+}
+
+/* */
+
+/* Scroll Bar */
+
+::-webkit-scrollbar {
+    width: 10px; /* Hur bred hela scrollbaren är inkluderande "tracken" den går på */
+}
+
+::-webkit-scrollbar-track {
+    background: rgb(70,70,70);/* banan som scrollbaren rör sig på */
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(70, 70, 70); /* Själva scrollbaren */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(50,50,50); /* När man hovrar så ändrar den färg */
+}
+
+/* Media queries for dfrnt Screensize */
+
+@media (min-width:900px) {
+    .calc-screen{
+        font-size: 23px;
+    }
+    .calc-btn{
+        font-size: 18px;
+    }
+
+}

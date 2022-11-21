@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="calc.css" />
+    <script src="script.js" defer></script>
+
+    <title>Miniräknare</title>
+  </head>
+  <body id="content" class="container">
+    <img class="img" src="forest_bg.png" />
+    <div class="main">
+      <div class="calc-screen grid-col-span-4" id="calc-screen"></div>
+      <button class="calc-btn calc-btn-ultra" onClick="btnClear();">C</button>
+      <button class="calc-btn calc-btn-ultra" onClick="feet();">
+        &#8680;ft
+      </button>
+      <button class="calc-btn calc-btn-ultra" onClick="centimeter();">
+        &#8680;cm
+      </button>
+      <button class="calc-btn calc-btn-xtra" onClick="btnBackSpace();">
+        &#8678;
+      </button>
+      <img class="wrango" src="jhw.jpg" alt="fin bild på wrangö" />
+      <button class="calc-btn calc-btn-ultra" onClick="btnSqrt();">
+        &radic;
+      </button>
+      <button class="calc-btn calc-btn-ultra" onClick="btnPowerTo();">
+        &and;
+      </button>
+      <button class="calc-btn calc-btn-xtra" onClick="addDigit('/')">
+        &divide;
+      </button>
+      <button class="calc-btn" onClick="addDigit('7');">7</button>
+      <button class="calc-btn" onClick="addDigit('8');">8</button>
+      <button class="calc-btn" onClick="addDigit('9');">9</button>
+      <button class="calc-btn calc-btn-xtra" onClick="addDigit('*')">
+        &times;
+      </button>
+      <button class="calc-btn" onClick="addDigit('4');">4</button>
+      <button class="calc-btn" onClick="addDigit('5');">5</button>
+      <button class="calc-btn" onClick="addDigit('6');">6</button>
+      <button class="calc-btn calc-btn-xtra" onClick="addDigit('-');">
+        &minus;
+      </button>
+      <button class="calc-btn" onClick="addDigit('1');">1</button>
+      <button class="calc-btn" onClick="addDigit('2');">2</button>
+      <button class="calc-btn" onClick="addDigit('3');">3</button>
+      <button class="calc-btn calc-btn-xtra" onClick="addDigit('+');">
+        &plus;
+      </button>
+      <button class="calc-btn" onClick="addDigit('.');">&comma;</button>
+      <button class="calc-btn" onClick="addDigit('0');">0</button>
+      <button
+        class="calc-btn grid-col-span-2 calc-btn-xtra"
+        onClick="btnSum();"
+      >
+        =
+      </button>
+    </div>
+  </body>
+</html>
